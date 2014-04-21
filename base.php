@@ -44,7 +44,7 @@ while($row = mysqli_fetch_array($result))
 	
 mysqli_close($con);
 
-var_dump($rows[0]);
+var_dump($rows[0]["target"]);
 
 ?>
 
