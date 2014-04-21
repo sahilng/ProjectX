@@ -36,11 +36,15 @@ if(mysqli_num_rows($result) == 0){
 	header("Location: index.php");
 }
 
+/*
 $rows = array();
 while($row = mysqli_fetch_array($result))
 	{
 		array_push($rows, $row);
 	}
+*/
+
+$rows = mysqli_fetch_array($result);
 	
 mysqli_close($con);
 
