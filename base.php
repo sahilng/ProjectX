@@ -30,7 +30,7 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
   
-$result = mysqli_query($con,"SELECT * FROM People");
+$result = mysqli_query($con,"SELECT * FROM People WHERE unique_id=".$user);
 
 if(mysqli_num_rows($result) == 0){
 	header("Location: index.php");
@@ -44,7 +44,7 @@ while($row = mysqli_fetch_array($result))
 	
 mysqli_close($con);
 
-var_dump($rows[0]["target"]);
+	var_dump($rows);
 
 ?>
 
