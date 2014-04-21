@@ -44,7 +44,17 @@ while($row = mysqli_fetch_array($result))
 	
 mysqli_close($con);
 
-	var_dump($rows);
+echo "id=".$rows["id"];
+echo "<br>";
+echo "unique id=".$rows["unique_id"];
+echo "<br>";
+echo "name=".$rows["name"];
+echo "<br>";
+echo "alive=".$rows["alive"];
+echo "<br>";
+echo "target=".$rows["target"];
+echo "<br>";
+echo "word=".$rows["word"];
 
 ?>
 
