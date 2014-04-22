@@ -23,6 +23,7 @@ $c_word = $c_word_array[0];
 
 if(strcmp($word, $c_word) == 0){
 				
+			/*
 			//first get target's target
 			$tt_query = mysqli_query($con,'SELECT * from People where id='.$target_id);
 			$tt_array = mysqli_fetch_array($tt_query);
@@ -42,6 +43,7 @@ if(strcmp($word, $c_word) == 0){
 			//then increment killer's kills
 			mysqli_query($con, 'UPDATE People SET kills = kills + 1 where id='.$killer_id);
 			echo "killer's kills incremented<br>";
+			*/
 	
 	echo "SUCCESS ".$killer." has killed ".$target.".";
 }
