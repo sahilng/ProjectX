@@ -93,7 +93,7 @@ echo"
 <form method=get action=kill.php>
 <input type=text style='display:none;' name='killer' value=".$rows["id"].">
 <input type=text style='display:none;' name='target' value=".$rows["target"].">
-<input type=text style='display:none;' name='word'>
+Target's secret Word: <input type=text name='word'>
 <input type=submit>
 </form>
 "
