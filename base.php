@@ -32,6 +32,8 @@ if(isset($_GET["success"])){
 	if(strcmp($_GET["success"], "false") == 0){
 		echo "You failed to kill your target: Incorrect word.<br>";
 	}
+}
+if(isset($_GET["user"])){
 	$user_id = $_GET["user"];
 	$u_query = mysqli_query($con,'SELECT unique_id from People where id='.$user_id);
 	$u_array = mysqli_fetch_array($u_query);
