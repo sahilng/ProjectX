@@ -15,16 +15,16 @@ function kill($killer_id, $target_id){
 	
 	//then set the target's target to 0
 	mysqli_query($conn, 'UPDATE People SET target=0 where id='.$target_id);
-	
+	echo "target's target set to 0<br>";
 	//then set the killer's target to the target's old target
 	mysqli_query($conn, 'UPDATE People SET target='.$targets_target.' where id='.$killer_id);
-	
+	echo "killer's target set to ".$targets_target."<br>";
 	//then set target's alive to no
 	mysqli_query($conn, 'UPDATE People SET alive=0 where id='.$target_id);
-	
+	echo "target set to dead<br>";
 	//then increment killer's kills
 	mysqli_query($conn, 'UPDATE People SET kills = kills + 1 where id='.$killer_id);
-	
+	echo "killer's kills incremented<br>";
 	mysqli_close($conn);
 }
 
