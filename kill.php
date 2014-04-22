@@ -43,7 +43,7 @@ if(strcmp($word, $c_word) == 0){
 			mysqli_query($con, 'UPDATE People SET kills = kills + 1 where id='.$killer_id);
 			echo "killer's kills incremented<br>";
 	
-	echo "SUCCESS ".$killer." has killed ".$target;
+	echo "SUCCESS ".$killer." has killed ".$target.".";
 }
 else{
 	echo $word." not equal to ".$c_word;
