@@ -44,7 +44,7 @@ if(strcmp($word, $c_word) == 0){
 	echo "SUCCESS ".$killer." has killed ".$target;
 }
 else{
-	header("Location: base.php?success=false");
+	echo $word." not equal to ".$c_word;
 }
 
 ?>
