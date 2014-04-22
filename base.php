@@ -11,7 +11,6 @@
 
 <?php
 require 'keys.php';
-require 'kill.php';
 
 
 $trimester = "Q3";
