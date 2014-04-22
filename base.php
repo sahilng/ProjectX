@@ -17,16 +17,19 @@ $trimester = "Q3";
 
 
 
+$con=mysqli_connect($mysql_server,$mysql_user,$mysql_password,$mysql_db);
+
+
 if(isset($_GET["success"])){
 	echo "success was ".$_GET["success"];
-	$user = $_GET["user"];
+	$user_id = $_GET["user"];
+	$u_query = mysqli_query($con,'SELECT unique_id from People where id='.$user_id);
+	$u_array = mysqli_fetch_array($u_query);
+	$user = $u_array[0];
 }
 else{
 	$user = $_POST['uid'];
 }
-
-
-$con=mysqli_connect($mysql_server,$mysql_user,$mysql_password,$mysql_db);
 
 
 if (mysqli_connect_errno())
