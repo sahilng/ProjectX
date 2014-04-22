@@ -79,6 +79,7 @@ echo"
 <input type=text name='killer' value=".$rows["id"].">
 <input type=text name='target' value=".$rows["target"].">
 <input type=text name='word'>
+<input type=submit>
 </form>
 "
 ?>
