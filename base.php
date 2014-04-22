@@ -46,7 +46,9 @@ while($row = mysqli_fetch_array($result))
 
 $rows = mysqli_fetch_array($result);
 
-$target_name = mysqli_query($con,"SELECT name FROM People WHERE id=".$rows["target"]);
+$t_name_query = mysqli_query($con,"SELECT name FROM People WHERE id=".$rows["target"]);
+$t_name_array = mysqli_fetch($t_name_query);
+$t_name = $t_name_array[0];
 	
 mysqli_close($con);
 
@@ -59,6 +61,8 @@ echo "<br>";
 echo "alive=".$rows["alive"];
 echo "<br>";
 echo "target=".$rows["target"];
+echo "<br>";
+echo "target name=".$t_name;
 echo "<br>";
 echo "word=".$rows["word"];
 
