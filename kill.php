@@ -45,6 +45,7 @@ if(strcmp($word, $c_word) == 0){
 }
 else{
 	echo $word." not equal to ".$c_word;
+	echo "<a href=base.php?success='false'>Go back</a>";
 }
 mysqli_close($con);
 ?>
