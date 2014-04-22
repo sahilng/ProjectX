@@ -5,6 +5,7 @@
 <body>
 
 <?php
+require('keys.php');
 
 function kill($killer_id, $target_id){
 	$conn=mysqli_connect($mysql_server,$mysql_user,$mysql_password,$mysql_db);
@@ -36,7 +37,6 @@ $word = strtolower($word);
 $con=mysqli_connect($mysql_server,$mysql_user,$mysql_password,$mysql_db);
 
 $c_word_query = mysqli_query($con, 'SELECT word from People where id='.$target);
-echo $target;
 $c_word_array = mysqli_fetch_array($c_word_query);
 var_dump($c_word_array);
 $c_word = $c_word_array[0];
