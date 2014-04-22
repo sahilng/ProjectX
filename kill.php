@@ -33,13 +33,13 @@ if(strcmp($word, $c_word) == 0){
 
 			//then set killer's target to the tt
 			mysqli_query($con, 'UPDATE People SET target='.$tt.' where id='.$killer);
-				
+			
+			//then set target's alive to no
+			mysqli_query($con, 'UPDATE People SET alive=0 where id='.$target);
+
 			/*
 			
 			
-			//then set the killer's target to the target's old target
-			mysqli_query($con, 'UPDATE People SET target='.$targets_target.' where id='.$killer_id);
-			echo "killer's target set to ".$targets_target."<br>";
 			//then set target's alive to no
 			mysqli_query($con, 'UPDATE People SET alive=0 where id='.$target_id);
 			echo "target set to dead<br>";
