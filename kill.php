@@ -7,7 +7,9 @@
 <?php
 require('keys.php');
 
-function kill($killer_id, $target_id, $conn){	
+function kill($killer_id, $target_id){
+	$conn=mysqli_connect($mysql_server,$mysql_user,$mysql_password,$mysql_db);
+	
 	//first get target's target
 	$targets_target = mysqli_query($conn,'SELECT target from People where id='.$target_id);
 	
@@ -22,7 +24,8 @@ function kill($killer_id, $target_id, $conn){
 	
 	//then increment killer's kills
 	mysqli_query($conn, 'UPDATE People SET kills = kills + 1 where id='.$killer_id);
-
+	
+	mysqli_close($conn);
 }
 
 $killer = $_GET["killer"];
@@ -39,7 +42,7 @@ var_dump($c_word_array);
 $c_word = $c_word_array[0];
 
 if(strcmp($word, $c_word) == 0){
-	kill($killer, $target, $con);
+	kill($killer, $target);
 	echo "SUCCESS ".$killer." has killed ".$target;
 }
 else{
