@@ -1,9 +1,17 @@
 <html>
 <head>
 <title>Kill</title>
+<link rel="stylesheet" type="text" href="style.css">
+
 </head>
 <body>
+<div id="header">
+	
+	<div id="logo"><a href="index.php">Project X</a></div>
+	
+</div>
 
+<div id='content' style='margin-top:55px;'>
 <?php
 require('keys.php');
 
@@ -49,6 +57,8 @@ else{
 }
 mysqli_close($con);
 ?>
+
+</div>
 
 </body>
 </html>

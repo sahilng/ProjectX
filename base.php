@@ -15,6 +15,8 @@
 	
 </div>
 
+<div id='content' style='margin-top:55px;'>
+
 <?php
 require 'keys.php';
 
@@ -92,6 +94,8 @@ echo"
 </form>
 "
 ?>
+
+</div>
 
 </body>
 </html>
