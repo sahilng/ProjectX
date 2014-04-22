@@ -11,11 +11,14 @@ function kill($killer_id, $target_id){
 	$conn=mysqli_connect($mysql_server,$mysql_user,$mysql_password,$mysql_db);
 	
 	//first get target's target
-	$targets_target = mysqli_query($conn,'SELECT target from People where id='.$target_id);
+	$tt_query = mysqli_query($conn,'SELECT target from People where id='.$target_id);
+	$tt_array = mysqli_fetch_array($tt_query);
+	$targets_target = $tt_array[0];
+	
 	
 	//then set the target's target to 0
 	mysqli_query($conn, 'UPDATE People SET target=0 where id='.$target_id);
-	echo "target's target set to zero<br>";
+	echo "<br>target's target set to zero<br>";
 	//then set the killer's target to the target's old target
 	mysqli_query($conn, 'UPDATE People SET target='.$targets_target.' where id='.$killer_id);
 	echo "killer's target set to ".$targets_target."<br>";
