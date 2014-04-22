@@ -13,6 +13,7 @@ function kill($killer_id, $target_id){
 	//first get target's target
 	$tt_query = mysqli_query($conn,'SELECT target from People where id='.$target_id);
 	$tt_array = mysqli_fetch_array($tt_query);
+	var_dump($tt_array);
 	$targets_target = $tt_array[0];
 	
 	
