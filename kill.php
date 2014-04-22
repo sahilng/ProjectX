@@ -37,16 +37,9 @@ if(strcmp($word, $c_word) == 0){
 			//then set target's alive to no
 			mysqli_query($con, 'UPDATE People SET alive=0 where id='.$target);
 
-			/*
+			//increment killer's kills
+			mysqli_query($con, 'UPDATE People SET kills = kills + 1 where id='.$killer);
 			
-			
-			//then set target's alive to no
-			mysqli_query($con, 'UPDATE People SET alive=0 where id='.$target_id);
-			echo "target set to dead<br>";
-			//then increment killer's kills
-			mysqli_query($con, 'UPDATE People SET kills = kills + 1 where id='.$killer_id);
-			echo "killer's kills incremented<br>";
-			*/
 	
 	echo "SUCCESS ".$killer." has killed ".$target.".";
 }
