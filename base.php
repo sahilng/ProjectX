@@ -19,12 +19,11 @@ $trimester = "Q3";
 
 if(isset($_GET["success"])){
 	echo "success was ".$_GET["success"];
+	$user = $_GET["user"];
 }
 else{
 	$user = $_POST['uid'];
-	$_SESSION['user'] = $user;
 }
-$static_user = $_SESSION['user'];
 
 
 $con=mysqli_connect($mysql_server,$mysql_user,$mysql_password,$mysql_db);
@@ -35,7 +34,7 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
   
-$result = mysqli_query($con,"SELECT * FROM People WHERE unique_id=".$static_user);
+$result = mysqli_query($con,"SELECT * FROM People WHERE unique_id=".$user);
 
 if(mysqli_num_rows($result) == 0){
 	//header("Location: index.php");
