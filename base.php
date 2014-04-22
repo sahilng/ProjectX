@@ -15,6 +15,8 @@ require 'keys.php';
 
 $trimester = "Q3";
 $user = $_POST['uid'];
+$_SESSION['user'] = $user;
+$static_user = $_SESSION['user'];
 
 
 if(isset($_GET["success"])){
@@ -29,7 +31,7 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
   
-$result = mysqli_query($con,"SELECT * FROM People WHERE unique_id=".$user);
+$result = mysqli_query($con,"SELECT * FROM People WHERE unique_id=".$static_user);
 
 if(mysqli_num_rows($result) == 0){
 	//header("Location: index.php");
