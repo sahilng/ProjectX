@@ -14,15 +14,8 @@ require 'keys.php';
 
 
 $trimester = "Q3";
-$password = $_POST['pw'];
 $user = $_POST['uid'];
 
-
-if($password === "hmlions"){
-	
-}else{
-	header("Location: index.php");
-}
 
 if(isset($_GET["success"])){
 	echo "success was ".$_GET["success"];

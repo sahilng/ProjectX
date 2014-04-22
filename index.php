@@ -31,10 +31,6 @@
 <div id="uid_container">
 <input id="uid" type="text" name="uid" placeholder="HM Unique ID">
 </div>
-<br>
-<div id="pw_container">
-<input id="pw" type="password" name="pw" placeholder="Secret Password">
-</div>
 <input id="login_submit" type=submit>
 </form>
 
