@@ -45,6 +45,8 @@ while($row = mysqli_fetch_array($result))
 */
 
 $rows = mysqli_fetch_array($result);
+
+$target_name = mysqli_query($con,"SELECT name FROM People WHERE id=".$rows["target"]);
 	
 mysqli_close($con);
 
