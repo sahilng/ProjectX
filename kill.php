@@ -23,16 +23,16 @@ $c_word = $c_word_array[0];
 
 if(strcmp($word, $c_word) == 0){
 			
+			//first get target's target (tt)
 			$tt_query = mysqli_query($con, 'SELECT target from People where id='.$target);
 			$tt_array = mysqli_fetch_array($tt_query);
-			echo($tt_array[0]);
+			$tt = $tt_array[0];
+			
+			//then set the target's target to 0
+			mysqli_query($con, 'UPDATE People SET target=0 where id='.$target);
+
 				
 			/*
-			//first get target's target
-			$tt_query = mysqli_query($con,'SELECT * from People where id='.$target_id);
-			$tt_array = mysqli_fetch_array($tt_query);
-			var_dump($tt_array);
-			$targets_target = $tt_array[0];
 			
 			
 			//then set the target's target to 0
