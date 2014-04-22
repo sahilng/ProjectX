@@ -14,14 +14,18 @@ require 'keys.php';
 
 
 $trimester = "Q3";
-$user = $_POST['uid'];
-$_SESSION['user'] = $user;
-$static_user = $_SESSION['user'];
+
 
 
 if(isset($_GET["success"])){
 	echo "success was ".$_GET["success"];
 }
+else{
+	$user = $_POST['uid'];
+	$_SESSION['user'] = $user;
+}
+$static_user = $_SESSION['user'];
+
 
 $con=mysqli_connect($mysql_server,$mysql_user,$mysql_password,$mysql_db);
 
