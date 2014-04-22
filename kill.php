@@ -23,7 +23,7 @@ $c_word = $c_word_array[0];
 
 if(strcmp($word, $c_word) == 0){
 			
-			$result = mysqli_query($con, 'SELECT * from People where id=1');
+			$result = mysqli_query($con, 'SELECT * from People where id='.$target);
 			var_dump(mysqli_fetch_array($result));
 				
 			/*
