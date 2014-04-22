@@ -23,9 +23,9 @@ $c_word = $c_word_array[0];
 
 if(strcmp($word, $c_word) == 0){
 			
-			$result = mysqli_query($con, 'SELECT target from People where id='.$target);
-			$result_array = mysqli_fetch_array($result);
-			echo($result_array[0]);
+			$tt_query = mysqli_query($con, 'SELECT target from People where id='.$target);
+			$tt_array = mysqli_fetch_array($tt_query);
+			echo($tt_array[0]);
 				
 			/*
 			//first get target's target
