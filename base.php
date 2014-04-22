@@ -11,6 +11,9 @@
 
 <?php
 require 'keys.php';
+require 'kill.php';
+
+
 $trimester = "Q3";
 $password = $_POST['pw'];
 $user = $_POST['uid'];
@@ -20,6 +23,10 @@ if($password === "hmlions"){
 	
 }else{
 	header("Location: index.php");
+}
+
+if(isset($_GET["success"])){
+	echo "success was ".$_GET["success"];
 }
 
 $con=mysqli_connect($mysql_server,$mysql_user,$mysql_password,$mysql_db);
@@ -66,8 +73,15 @@ echo "target name=".$t_name;
 echo "<br>";
 echo "word=".$rows["word"];
 
-?>
 
+echo"
+<form method=get action=kill.php>
+<input type=text name='killer' value=".$rows["id"].">
+<input type=text name='target' value=".$rows["target"].">
+<input type=text name='word'>
+</form>
+"
+?>
 
 </body>
 </html>
