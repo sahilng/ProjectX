@@ -91,9 +91,9 @@ echo "word=".$rows["word"];
 
 echo"
 <form method=get action=kill.php>
-<input type=text name='killer' value=".$rows["id"].">
-<input type=text name='target' value=".$rows["target"].">
-<input type=text name='word'>
+<input type=text style='display:none;' name='killer' value=".$rows["id"].">
+<input type=text style='display:none;' name='target' value=".$rows["target"].">
+<input type=text style='display:none;' name='word'>
 <input type=submit>
 </form>
 "
