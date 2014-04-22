@@ -9,6 +9,12 @@
 </head>
 <body>
 
+<div id="header">
+	
+	<div id="logo"><a href="index.php">Project X</a></div>
+	
+</div>
+
 <?php
 require 'keys.php';
 
