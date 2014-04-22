@@ -21,7 +21,9 @@ $con=mysqli_connect($mysql_server,$mysql_user,$mysql_password,$mysql_db);
 
 
 if(isset($_GET["success"])){
-	echo "success was ".$_GET["success"];
+	if(strcmp($_GET["success"], "false") == 0){
+		echo "You failed to kill your target: Incorrect word.<br>";
+	}
 	$user_id = $_GET["user"];
 	$u_query = mysqli_query($con,'SELECT unique_id from People where id='.$user_id);
 	$u_array = mysqli_fetch_array($u_query);
