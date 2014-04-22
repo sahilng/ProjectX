@@ -32,7 +32,8 @@ if (mysqli_connect_errno())
 $result = mysqli_query($con,"SELECT * FROM People WHERE unique_id=".$user);
 
 if(mysqli_num_rows($result) == 0){
-	header("Location: index.php");
+	//header("Location: index.php");
+	echo "Login Error.";
 }
 
 /*
