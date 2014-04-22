@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><title>Schedules</title>
+<head><title>Project X</title>
 
 <link rel="stylesheet" type="text" href="style.css">
 
@@ -20,7 +20,7 @@
 
 <div id="header">
 	
-	<div id="logo"><a href="index.php">Schedules</a></div>
+	<div id="logo"><a href="index.php">Project X</a></div>
 	
 </div>
 
