@@ -78,13 +78,16 @@ echo "name=".$name;
 echo "<br>";
 echo "alive=".$rows["alive"];
 echo "<br>";
-echo "target=".$rows["target"];
-echo "<br>";
-echo "kills=".$rows["kills"];
-echo "<br>";
-echo "target name=".$t_name;
-echo "<br>";
-echo "word=".$rows["word"];
+
+if(strcmp($rows["alive"], "TRUE") == 0){
+	echo "target=".$rows["target"];
+	echo "<br>";
+	echo "kills=".$rows["kills"];
+	echo "<br>";
+	echo "target name=".$t_name;
+	echo "<br>";
+	echo "word=".$rows["word"];
+}
 
 
 echo"
