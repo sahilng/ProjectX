@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src='//ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js' type='text/javascript'></script>
 
 <link rel="stylesheet" type="text" href="css/bootstrap.css">
 <link rel="stylesheet" type="text" href="css/style.css">
@@ -74,6 +73,10 @@
 		$t_name_array = mysqli_fetch_array($t_name_query);
 		$t_name = $t_name_array[0];
 		
+		$t_uid_query = mysqli_query($con,"SELECT unique_id from Players where id=".$rows["target"]);
+		$t_uid_array = mysqli_fetch_array($t_uid_query);
+		$t_uid = $t_uid_array[0];
+		
 			
 		mysqli_close($con);
 		
@@ -98,6 +101,11 @@
 			Target's secret Word: <input type=text name='word'>
 			<input type=submit>
 			</form>
+			
+			<form id=schedule method=post action='http://www.sahilgupta.com/schedules/base.php'>
+			<input type=text style='display:none;' name='pw' value='hmlions'>
+			<input type=text style='display:none;' name='uid' value=".$t_uid.">
+			</form>
 			";
 		}
 		else{
@@ -107,6 +115,8 @@
 		?>
 		</div>
 </div>
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js' type='text/javascript'></script>
 
 </body>
 </html>
