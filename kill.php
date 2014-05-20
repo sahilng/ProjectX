@@ -6,15 +6,11 @@
 
 </head>
 <body>
-<div id="header">
-	
-	<div id="logo"><a href="index.php">Project X</a></div>
-	
-</div>
 
 <div id='content' style='margin-top:55px;'>
 
 <span id="logo">Project X</span>
+<br>
 
 <?php
 require('keys.php');
