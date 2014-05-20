@@ -58,7 +58,7 @@ if(mysqli_num_rows($result) == 0){
 
 $rows = mysqli_fetch_array($result);
 
-$name_query = mysqli_query($con, "SELECT name FROM People WHERE unique_id=(SELECT unique_id from PLayers where id=".$rows["id"].")");
+$name_query = mysqli_query($con, "SELECT name FROM People WHERE unique_id=(SELECT unique_id from Players where id=".$rows["id"].")");
 $name_array = mysqli_fetch_array($name_query);
 $name = $name_array[0];
 
