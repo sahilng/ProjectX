@@ -32,6 +32,7 @@
 	<div id="uid_container">
 	<input id="uid" type="text" name="uid" placeholder="HM Unique ID">
 	</div>
+	<br>
 	<input id="login_submit" type=submit>
 	</form>
 	

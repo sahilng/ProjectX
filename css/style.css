@@ -17,3 +17,8 @@ body{
 #uid{
 	font-size: 30px;
 }
+
+#login_submit{
+	width:100px;
+	height:40px;
+}
