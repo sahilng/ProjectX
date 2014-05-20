@@ -87,17 +87,19 @@ if(strcmp($rows["alive"], "TRUE") == 0){
 	echo "target name=".$t_name;
 	echo "<br>";
 	echo "word=".$rows["word"];
+
+
+
+	echo"
+	<form method=get action=kill.php>
+	<input type=text style='display:none;' name='killer' value=".$rows["id"].">
+	<input type=text style='display:none;' name='target' value=".$rows["target"].">
+	Target's secret Word: <input type=text name='word'>
+	<input type=submit>
+	</form>
+	"
 }
 
-
-echo"
-<form method=get action=kill.php>
-<input type=text style='display:none;' name='killer' value=".$rows["id"].">
-<input type=text style='display:none;' name='target' value=".$rows["target"].">
-Target's secret Word: <input type=text name='word'>
-<input type=submit>
-</form>
-"
 ?>
 
 </div>
