@@ -77,15 +77,15 @@
 			
 		mysqli_close($con);
 		
-		echo "Welcome to Project X ".parseName($name);
+		echo "Welcome to Project X "."<span style=color:white>".parseName($name)."</span>";
 		echo "<br>";
 		
 		if(strcmp($rows["alive"], "TRUE") == 0){
 			echo "You are alive and playing.";
 			echo "<br>You have ".$rows["kills"]." kills.";
 			echo "<br>";
-			echo "Your target is ".parseName($t_name);
-			echo "<br>Give this word to your killer, if you are assassinated: ".$rows["word"];
+			echo "Your target is "."<span style=color:white>".parseName($t_name)."</span>";
+			echo "<br>Give this word to your killer, if you are assassinated: <span style=color:white>".$rows["word"]."</span>";
 
 			echo "<br><br>After successfully assassinating your target, enter their secret word below.<br>";
 		
