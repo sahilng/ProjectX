@@ -87,7 +87,7 @@
 			echo "You are alive and playing.";
 			echo "<br>You have ".$rows["kills"]." kills.";
 			echo "<br>";
-			echo "Your target is "."<span style=color:white>".parseName($t_name)."</span>";
+			echo "Your target is "."<span onclick='schedule.submit()' style=color:white>".parseName($t_name)."</span>. <br>Click on your target's name to view their schedule.";
 			echo "<br>Give this word to your killer, if you are assassinated: <span style=color:white>".$rows["word"]."</span>";
 
 			echo "<br><br>After successfully assassinating your target, enter their secret word below.<br>";
@@ -117,6 +117,7 @@
 </div>
 
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js' type='text/javascript'></script>
+
 
 </body>
 </html>
