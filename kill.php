@@ -43,7 +43,7 @@ if(strcmp($word, $c_word) == 0){
 			mysqli_query($con, 'UPDATE Players SET target='.$tt.' where id='.$killer);
 			
 			//then set target's alive to no
-			mysqli_query($con, 'UPDATE Players SET alive=false where id='.$target);
+			mysqli_query($con, 'UPDATE Players SET alive="FALSE" where id='.$target);
 
 			//increment killer's kills
 			mysqli_query($con, 'UPDATE Players SET kills = kills + 1 where id='.$killer);
