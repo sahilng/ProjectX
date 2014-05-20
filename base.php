@@ -73,7 +73,7 @@
 		
 		if(strcmp($rows["alive"], "TRUE") == 0){
 			echo "You are alive and playing.";
-			echo "kills=".$rows["kills"];
+			echo "You have ".$rows["kills"]." kills.";
 			echo "<br>";
 			echo "target name=".$t_name;
 			echo "<br>your secret word=".$rows["word"];
