@@ -1,16 +1,11 @@
 <html>
 <head>
 <title>Kill</title>
-<link rel="stylesheet" type="text" href="css/bootstrap.css">
-<link rel="stylesheet" type="text" href="css/style.css">
+
 
 </head>
 <body>
 
-<div id='content' style='margin-top:55px;'>
-
-<span id="logo">Project X</span>
-<br>
 
 <?php
 require('keys.php');
@@ -28,7 +23,11 @@ $c_word_query = mysqli_query($con, 'SELECT word from Players where id='.$target)
 $c_word_array = mysqli_fetch_array($c_word_query);
 $c_word = $c_word_array[0];
 
-if(strcmp($word, $c_word) == 0){
+$target_alive_query = mysqli_query($con, 'SELECT alive from Players where id='.$target);
+$target_alive_array = mysqli_fetch_array($target_alive_query);
+$target_alive = $target_alive_array[0];
+
+if(strcmp($word, $c_word) == 0 && strcmp($target_alive, "TRUE") == 0){
 			
 			//first get target's target (tt)
 			$tt_query = mysqli_query($con, 'SELECT target from Players where id='.$target);
@@ -48,18 +47,15 @@ if(strcmp($word, $c_word) == 0){
 			mysqli_query($con, 'UPDATE Players SET kills = kills + 1 where id='.$killer);
 			
 	
-	echo "Success. You have killed your target";
-	echo "<br><a href=base.php?user=".$killer.">Go back</a>";
+	header("Location: base.php?user=".$killer);
 
 }
 else{
-	echo "Failure. You entered the wrong word.";
-	echo "<a href=base.php?success=false&user=".$killer.">Go back</a>";
+	header("Location: base.php?success=false&user=".$killer);
 }
 mysqli_close($con);
 ?>
 
-</div>
 
 </body>
 </html>
