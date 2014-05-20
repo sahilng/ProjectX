@@ -49,6 +49,8 @@ if(strcmp($word, $c_word) == 0){
 			
 	
 	echo "Success. You have killed your target";
+	echo "<a href=base.php?user=".$killer.">Go back</a>";
+
 }
 else{
 	echo "Failure. You entered the wrong word.";
