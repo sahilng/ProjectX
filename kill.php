@@ -1,8 +1,8 @@
 <html>
 <head>
 <title>Kill</title>
-<link rel="stylesheet" type="text" href="style/bootstrap.css">
-<link rel="stylesheet" type="text" href="style/style.css">
+<link rel="stylesheet" type="text" href="css/bootstrap.css">
+<link rel="stylesheet" type="text" href="css/style.css">
 
 </head>
 <body>
