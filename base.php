@@ -16,6 +16,15 @@
 		<div id='content' style='margin-top:55px;'>
 		
 		<?php
+		
+		function parseName($colonName){
+			$nameArray = explode("; ", $colonName);
+			return $nameArray[1] . " " . $nameArray[0];
+		}
+		
+		
+		
+		
 		require 'keys.php';
 		
 		
@@ -68,7 +77,7 @@
 			
 		mysqli_close($con);
 		
-		echo "Welcome to Project X ".$name;
+		echo "Welcome to Project X ".parseName($name);
 		echo "<br>";
 		
 		if(strcmp($rows["alive"], "TRUE") == 0){
