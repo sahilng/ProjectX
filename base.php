@@ -90,14 +90,14 @@ if(strcmp($rows["alive"], "TRUE") == 0){
 
 
 
-	echo"
+	echo "
 	<form method=get action=kill.php>
 	<input type=text style='display:none;' name='killer' value=".$rows["id"].">
 	<input type=text style='display:none;' name='target' value=".$rows["target"].">
 	Target's secret Word: <input type=text name='word'>
 	<input type=submit>
 	</form>
-	"
+	";
 }
 
 ?>
