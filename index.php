@@ -2,7 +2,7 @@
 <html>
 <head><title>Project X</title>
 
-<link rel="stylesheet" type="text" href="style.css">
+<link rel="stylesheet" type="text" href="static/style.css">
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -20,7 +20,7 @@
 
 <div id="header">
 	
-	<div id="logo"><a href="index.php">Project X</a></div>
+	<div id="logo"><a href="index.html">Project X</a></div>
 	
 </div>
 

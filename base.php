@@ -35,7 +35,7 @@ if(isset($_GET["success"])){
 }
 if(isset($_GET["user"])){
 	$user_id = $_GET["user"];
-	$u_query = mysqli_query($con,'SELECT unique_id from People where id='.$user_id);
+	$u_query = mysqli_query($con,'SELECT unique_id from Players where id='.$user_id);
 	$u_array = mysqli_fetch_array($u_query);
 	$user = $u_array[0];
 }
@@ -49,26 +49,24 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
   
-$result = mysqli_query($con,"SELECT * FROM People WHERE unique_id=".$user);
+$result = mysqli_query($con,"SELECT * FROM Players WHERE unique_id=".$user);
 
 if(mysqli_num_rows($result) == 0){
 	//header("Location: index.php");
 	echo "Login Error.";
 }
 
-/*
-$rows = array();
-while($row = mysqli_fetch_array($result))
-	{
-		array_push($rows, $row);
-	}
-*/
-
 $rows = mysqli_fetch_array($result);
 
-$t_name_query = mysqli_query($con,"SELECT name FROM People WHERE id=".$rows["target"]);
+$name_query = mysqli_query($con, "SELECT name FROM People WHERE unique_id=(SELECT unique_id from PLayers where id=".$rows["id"].")");
+$name_array = mysqli_fetch_array($name_query);
+$name = $name_array[0];
+
+
+$t_name_query = mysqli_query($con,"SELECT name FROM People WHERE unique_id=(SELECT unique_id from Players where id=".$rows["target"].")");
 $t_name_array = mysqli_fetch_array($t_name_query);
 $t_name = $t_name_array[0];
+
 	
 mysqli_close($con);
 
@@ -76,7 +74,7 @@ echo "id=".$rows["id"];
 echo "<br>";
 echo "unique id=".$rows["unique_id"];
 echo "<br>";
-echo "name=".$rows["name"];
+echo "name=".$name;
 echo "<br>";
 echo "alive=".$rows["alive"];
 echo "<br>";
