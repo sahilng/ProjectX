@@ -76,7 +76,7 @@
 			echo "<br>You have ".$rows["kills"]." kills.";
 			echo "<br>";
 			echo "Your target is ".$t_name;
-			echo "<br>your secret word=".$rows["word"];
+			echo "<br>Give this word to your killer, if you are assassinated: ".$rows["word"];
 
 			echo "<br><br>After successfully assassinating your target, enter their secret word below.<br>";
 		
