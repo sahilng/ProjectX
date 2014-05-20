@@ -84,7 +84,7 @@
 			echo "You are alive and playing.";
 			echo "<br>You have ".$rows["kills"]." kills.";
 			echo "<br>";
-			echo "Your target is ".$parseName(t_name);
+			echo "Your target is ".parseName($t_name);
 			echo "<br>Give this word to your killer, if you are assassinated: ".$rows["word"];
 
 			echo "<br><br>After successfully assassinating your target, enter their secret word below.<br>";
