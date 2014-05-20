@@ -68,7 +68,7 @@
 			
 		mysqli_close($con);
 		
-		echo "Your target is ".$name;
+		echo "Welcome to Project X ".$name;
 		echo "<br>";
 		
 		if(strcmp($rows["alive"], "TRUE") == 0){
