@@ -68,16 +68,11 @@
 			
 		mysqli_close($con);
 		
-		echo "id=".$rows["id"];
-		echo "<br>";
-		echo "unique id=".$rows["unique_id"];
-		echo "<br>";
-		echo "name=".$name;
-		echo "<br>";
-		echo "alive=".$rows["alive"];
+		echo "Your target is ".$name;
 		echo "<br>";
 		
 		if(strcmp($rows["alive"], "TRUE") == 0){
+			echo "You are alive and playing.";
 			echo "kills=".$rows["kills"];
 			echo "<br>";
 			echo "target name=".$t_name;
@@ -95,6 +90,9 @@
 			<input type=submit>
 			</form>
 			";
+		}
+		else{
+			echo "Sorry, you died. Better luck next time.";
 		}
 		
 		?>
