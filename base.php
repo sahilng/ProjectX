@@ -43,6 +43,8 @@ else{
 	$user = $_POST['uid'];
 }
 
+echo "user = " . $user;
+
 
 if (mysqli_connect_errno())
   {
