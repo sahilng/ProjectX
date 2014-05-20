@@ -2,7 +2,10 @@
 <html>
 <head><title>Project X</title>
 
-<link rel="stylesheet" type="text" href="static/style.css">
+<link rel="stylesheet" type="text" href="css/bootstrap.css">
+<link rel="stylesheet" type="text" href="css/style.css">
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -18,22 +21,20 @@
 </head>
 <body>
 
-<div id="header">
+<div id="content" class="container">
+
 	
-	<div id="logo"><a href="index.html">Project X</a></div>
+	<div id="login">
+	<form action="base.php" method="post">
+	<br>
+	<div id="uid_container">
+	<input id="uid" type="text" name="uid" placeholder="HM Unique ID">
+	</div>
+	<input id="login_submit" type=submit>
+	</form>
 	
-</div>
-
-
-<div id="login">
-<form action="base.php" method="post">
-<br>
-<div id="uid_container">
-<input id="uid" type="text" name="uid" placeholder="HM Unique ID">
-</div>
-<input id="login_submit" type=submit>
-</form>
-
+	</div>
+	
 </div>
 
 
