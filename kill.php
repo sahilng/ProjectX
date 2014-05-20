@@ -1,7 +1,8 @@
 <html>
 <head>
 <title>Kill</title>
-<link rel="stylesheet" type="text" href="style.css">
+<link rel="stylesheet" type="text" href="style/bootstrap.css">
+<link rel="stylesheet" type="text" href="style/style.css">
 
 </head>
 <body>
@@ -12,6 +13,9 @@
 </div>
 
 <div id='content' style='margin-top:55px;'>
+
+<span id="logo">Project X</span>
+
 <?php
 require('keys.php');
 
@@ -26,7 +30,6 @@ $con=mysqli_connect($mysql_server,$mysql_user,$mysql_password,$mysql_db);
 
 $c_word_query = mysqli_query($con, 'SELECT word from Players where id='.$target);
 $c_word_array = mysqli_fetch_array($c_word_query);
-var_dump($c_word_array);
 $c_word = $c_word_array[0];
 
 if(strcmp($word, $c_word) == 0){
@@ -49,10 +52,10 @@ if(strcmp($word, $c_word) == 0){
 			mysqli_query($con, 'UPDATE Players SET kills = kills + 1 where id='.$killer);
 			
 	
-	echo "SUCCESS ".$killer." has killed ".$target.".";
+	echo "Success. You have killed your target";
 }
 else{
-	echo $word." not equal to ".$c_word;
+	echo "Failure. You entered the wrong word.";
 	echo "<a href=base.php?success=false&user=".$killer.">Go back</a>";
 }
 mysqli_close($con);
